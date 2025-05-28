@@ -1,0 +1,23 @@
+<%= form_with(model: restaurant, local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :category %>
+    <%= form.select :category, Restaurant::CATEGORIES, {}, class: "form-select" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

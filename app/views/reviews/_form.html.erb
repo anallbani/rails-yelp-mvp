@@ -1,0 +1,13 @@
+<%= form_with(model: [restaurant, review], local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, in: 0..5, step: 1, class: "form-control" %>
+  </div>
+
+  <%= form.submit class: "btn btn-primary" %>
+<% end %>

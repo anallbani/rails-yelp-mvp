@@ -1,0 +1,20 @@
+<h1><%= @restaurant.name %></h1>
+<p><strong>Address:</strong> <%= @restaurant.address %></p>
+<p><strong>Phone:</strong> <%= @restaurant.phone_number %></p>
+<p><strong>Category:</strong> <%= @restaurant.category %></p>
+
+<hr>
+
+<h2>Reviews</h2>
+
+<% @restaurant.reviews.each do |review| %>
+  <p>
+    <strong>Rating:</strong> <%= review.rating %>/5<br>
+    <%= review.content %>
+  </p>
+<% end %>
+
+<h3>Add a Review</h3>
+<%= render 'reviews/form', restaurant: @restaurant, review: @review %>
+
+<%= link_to "Back to all restaurants", restaurants_path, class: "btn btn-secondary mt-4" %>
